@@ -17,6 +17,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  template: template0
   # ToDo pidファイルをあらかじめ削除するコマンドを書き込んでおく必要あり
   # Wearning hostつながないと設定できない
   # Dockerを使う際はここのhostを通す（ToDo いちいちコメントアウト弄るのはおかしいので、そうしなくて住む設定をpid修正の時に追記して設定安定させたい）
@@ -31,6 +32,7 @@ default: &default
 development:
   <<: *default
   database: keijiban_development
+  template: template0
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -65,6 +67,7 @@ development:
 test:
   <<: *default
   database: keijiban_test
+  template: template0
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
